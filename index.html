@@ -24,24 +24,20 @@
     <style>
       body {
         font-family: 'Lato', 'sans-serif';
+        overflow: hidden; /* Prevent scrolling during drag */
       }
       .book-container {
         perspective: 2500px;
-        width: 90vw;
-        height: 80vh;
-        max-width: 500px;
-        max-height: 700px;
+        cursor: grab;
+      }
+      .book-container.grabbing {
+        cursor: grabbing;
       }
       .page {
         transform-style: preserve-3d;
         backface-visibility: hidden;
-        transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-        transform-origin: center top;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transform-origin: left center;
       }
       .page-front, .page-back {
         backface-visibility: hidden;
@@ -50,12 +46,61 @@
         left: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
       }
       .page-back {
-        transform: rotateX(180deg);
+        transform: rotateY(180deg);
       }
       .page.flipped {
-        transform: rotateX(-180deg);
+        transform: rotateY(-180deg);
+      }
+      
+      /* Shadow on the page underneath */
+      .page-front::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 25%);
+        opacity: 0;
+        transition: opacity 0.6s;
+        pointer-events: none;
+      }
+
+      /* Curl effect on the back of the turning page */
+      .page-back::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 2%, rgba(0,0,0,0) 18%);
+          opacity: 0;
+          transition: opacity 0.6s ease-in-out;
+          pointer-events: none;
+      }
+
+      /* Show shadows when page is being dragged or is flipped */
+      .page.dragging .page-front::after,
+      .page.flipped .page-front::after,
+      .page.dragging .page-back::before,
+      .page.flipped .page-back::before {
+        opacity: 1;
+      }
+
+      .grab-zone-right {
+        cursor: e-resize;
+      }
+      .grab-zone-left {
+        cursor: w-resize;
+      }
+      .silk-texture {
+        background-image: url('https://images.unsplash.com/photo-1619043518800-7f14be467dca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074');
+        background-size: cover;
+        background-position: center;
       }
     </style>
   <script type="importmap">

@@ -1,27 +1,24 @@
-
 import React from 'react';
-import { FlowerIcon } from './icons';
 
 const ThankYouCard: React.FC = () => {
   return (
-    <div className="bg-emerald-600 text-stone-100 p-4 sm:p-6 w-full h-full flex flex-col items-center shadow-lg text-center overflow-y-auto">
-      <div className="flex items-center justify-center gap-2 mb-4">
-        <FlowerIcon className="w-7 h-7" />
-        <h2 className="text-2xl sm:text-3xl font-bold font-serif">DRESS CODE</h2>
-        <FlowerIcon className="w-7 h-7" />
-      </div>
-      <div className="relative flex-grow flex flex-col justify-center items-center">
-        <p className="text-base leading-relaxed z-10 px-2 font-sans">
-          Emerald green, a rich and vivid shade inspired by the beauty of precious gemstones, sets the perfect tone for a wedding that radiates elegance and depth. It embodies a lush, luxurious, and timeless charm. Symbolizing growth, harmony, and renewal, it reflects the couple’s journey toward a flourishing and enduring love.
+    <div className="relative text-neutral-800 p-4 sm:p-6 w-full h-full flex flex-col items-center text-center overflow-hidden">
+      {/* Photo Frame Placeholders */}
+      <div className="absolute top-4 right-4 w-1/2 h-1/4 bg-black/15 rounded-lg transform rotate-3 border-2 border-white/50 shadow-lg"></div>
+      <div className="absolute bottom-4 left-4 w-1/3 h-1/2 bg-black/15 rounded-lg transform -rotate-2 border-2 border-white/50 shadow-lg"></div>
+      
+      <div className="relative z-10 flex flex-col justify-center items-center h-full">
+        <h2 className="text-2xl sm:text-3xl font-bold font-serif text-black mb-4">DRESS CODE</h2>
+        <p className="text-base leading-relaxed z-10 px-2 font-sans text-neutral-700 text-left sm:text-center max-w-md">
+          Our theme is Black-Tie Formal. We request that all guests wear emerald green to maintain the event’s cohesive and elegant look. We encourage suits for gentlemen and long dresses for ladies.
         </p>
-        <div className="mt-6 z-10">
-          <p className="font-bold text-xl mb-2 font-serif">Color Palette</p>
-          <div className="flex gap-2 justify-center">
-            <div className="w-10 h-10 rounded-full bg-emerald-900 border-2 border-stone-100"></div>
-            <div className="w-10 h-10 rounded-full bg-emerald-700 border-2 border-stone-100"></div>
-            <div className="w-10 h-10 rounded-full bg-emerald-500 border-2 border-stone-100"></div>
-            <div className="w-10 h-10 rounded-full bg-emerald-300 border-2 border-stone-100"></div>
-            <div className="w-10 h-10 rounded-full bg-stone-100 border-2 border-emerald-800"></div>
+        <div className="mt-8">
+          <p className="font-bold text-xl mb-4 font-serif">Color Palette</p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <div className="w-12 h-12 rounded-full bg-emerald-500 border-2 border-neutral-400"></div>
+            <div className="w-12 h-12 rounded-full bg-emerald-600 border-2 border-neutral-400"></div>
+            <div className="w-12 h-12 rounded-full bg-emerald-700 border-2 border-neutral-400"></div>
+            <div className="w-12 h-12 rounded-full bg-emerald-800 border-2 border-neutral-400"></div>
           </div>
         </div>
       </div>

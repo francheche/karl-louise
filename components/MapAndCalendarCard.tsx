@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { QrCodeIcon, FlowerIcon, HeartIcon } from './icons';
+import { QrCodeIcon } from './icons';
 
 const QrCodePlaceholder = () => (
   <div className="w-28 h-28 bg-white p-1 rounded-lg shadow-md flex items-center justify-center">
@@ -8,51 +7,24 @@ const QrCodePlaceholder = () => (
   </div>
 );
 
-
 const MapAndCalendarCard: React.FC = () => {
   return (
-    <div className="bg-stone-50 text-emerald-800 p-4 sm:p-6 border-4 border-emerald-600 w-full h-full shadow-lg overflow-y-auto">
-      <div className="flex flex-col gap-6 items-center h-full justify-center">
-        
-        {/* Wishlist section */}
-        <div className="flex-1 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
-              <HeartIcon className="w-7 h-7 text-pink-400" />
-              <h3 className="text-xl sm:text-2xl font-bold font-serif">Wedding Wishlist</h3>
-          </div>
-          <p className="text-base leading-relaxed mb-3 font-sans">
-            Not sure what gift to bring? Scan the QR code to explore our wishlist.
-          </p>
-          <div className="flex justify-center">
-            <QrCodePlaceholder />
-          </div>
-          <p className="text-xs mt-1 text-emerald-600 font-sans">Scan to view our wishlist</p>
-        </div>
+    <div className="relative text-black p-4 sm:p-6 w-full h-full overflow-hidden">
+       {/* Photo Frame Placeholders */}
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 w-11/12 h-1/4 bg-black/15 rounded-lg transform -rotate-1 border-2 border-white/50 shadow-lg"></div>
+      <div className="absolute bottom-4 left-4 w-1/3 h-1/2 bg-black/15 rounded-lg transform rotate-3 border-2 border-white/50 shadow-lg"></div>
 
-        <div className="w-full h-0.5 bg-emerald-200"></div>
-        
-        {/* Support section */}
-        <div className="flex-1 text-center">
-           <div className="flex items-center justify-center gap-2 mb-2">
-              <FlowerIcon className="w-7 h-7" />
-              <h3 className="text-xl sm:text-2xl font-bold font-serif">Share Your Blessings</h3>
-          </div>
-          <p className="text-base leading-relaxed mb-3 font-sans">
-            We warmly welcome any heartfelt contributions to make our day more magical.
-          </p>
-          <div className="text-left bg-emerald-50 p-3 rounded-lg border border-emerald-200 font-sans text-sm">
-            <p className="font-bold text-center mb-1">You can send donations here:</p>
-            <ul className="list-disc list-inside space-y-0.5 pl-2">
-              <li>BPI</li>
-              <li>GoTyme</li>
-              <li>Security Bank</li>
-              <li>BDO</li>
-              <li>GCash</li>
-              <li>Maya</li>
-            </ul>
-          </div>
+      <div className="relative z-10 flex flex-col items-center h-full justify-center text-center overflow-y-auto">
+        <h3 className="text-xl sm:text-2xl font-bold font-serif mb-2">WISHLIST</h3>
+        <div className="text-sm leading-relaxed mb-4 font-sans max-w-sm mx-auto text-neutral-700">
+          <p className="mb-2">Not sure what gift to bring? Don’t worry — we’ve got you covered!</p>
+          <p className="mb-3">We know choosing the perfect gift can be tricky, so we’ve made it easier for you.</p>
+          <p>Simply scan the QR code below to explore our carefully curated wedding wishlist — a collection of items that will help us build our first home together. Your thoughtful gift will be a beautiful reminder of your presence and support on this special journey, allowing a touch of you to live with us in our everyday moments.</p>
         </div>
-
+        <div className="flex justify-center">
+          <QrCodePlaceholder />
+        </div>
+        <p className="text-xs mt-1 text-neutral-700 font-sans">Scan to view our wishlist</p>
       </div>
     </div>
   );
