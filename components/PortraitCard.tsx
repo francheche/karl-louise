@@ -3,43 +3,43 @@ import React from 'react';
 import { QrCodeIcon, HeartIcon } from './icons';
 
 const QrCodePlaceholder = () => (
-  <div className="w-48 h-48 bg-white p-2 rounded-lg shadow-md flex items-center justify-center">
-    <QrCodeIcon className="w-40 h-40 text-gray-400" />
+  <div className="w-32 h-32 bg-white p-2 rounded-lg shadow-md flex items-center justify-center">
+    <QrCodeIcon className="w-28 h-28 text-gray-400" />
   </div>
 );
 
 const PortraitCard: React.FC = () => {
   return (
-    <div className="bg-stone-50 text-emerald-800 p-6 rounded-lg border-4 border-emerald-600 h-full flex flex-col items-center justify-center shadow-lg text-center">
+    <div className="bg-stone-50 text-emerald-800 p-4 sm:p-6 border-4 border-emerald-600 w-full h-full flex flex-col items-center justify-center shadow-lg text-center overflow-y-auto">
       
       {/* RSVP Section */}
       <div className="w-full">
-        <h2 className="text-4xl font-bold mb-2">RSVP</h2>
-        <p className="text-lg leading-relaxed max-w-lg mx-auto">
-          Save your seat and join the fun — confirm your attendance now to find out where the celebration begins!
+        <h2 className="text-2xl sm:text-3xl font-bold font-serif mb-2">RSVP</h2>
+        <p className="text-base leading-relaxed max-w-lg mx-auto font-sans">
+          Save your seat and join the fun — confirm your attendance now!
         </p>
-        <div className="my-6 flex justify-center">
+        <div className="my-4 flex justify-center">
           <QrCodePlaceholder />
         </div>
-        <p className="text-sm text-emerald-700 max-w-md mx-auto">
-          By opening this RSVP form, I consent to share my personal details with the couple and event organizers to ensure proper accommodation, a reserved seat under my name, and timely updates regarding the event and my reservation. I acknowledge that I have read and understood the event guidelines and agree to follow them upon submitting this form.
+        <p className="text-xs text-emerald-700 max-w-md mx-auto font-sans">
+          By opening this RSVP form, I consent to share my personal details with the couple and organizers for accommodation and updates. I agree to the event guidelines upon submitting this form.
         </p>
       </div>
 
-      <div className="w-40 h-0.5 bg-emerald-300 my-8"></div>
+      <div className="w-32 h-0.5 bg-emerald-300 my-4"></div>
 
       {/* Footer Quote */}
       <div className="w-full">
-        <p className="text-3xl italic text-emerald-700">
-          “We can’t wait to celebrate this magical day with you — see you there!”
+        <p className="text-xl sm:text-2xl italic text-emerald-700 font-serif">
+          “See you there!”
         </p>
-        <div className="mt-6 flex items-center justify-center gap-4 text-xl">
-          <HeartIcon className="w-6 h-6 text-pink-400" />
+        <div className="mt-4 flex items-center justify-center gap-3 text-lg">
+          <HeartIcon className="w-5 h-5 text-pink-400" />
           <div>
-            <p className="text-4xl font-bold">Karl & Louise</p>
-            <p className="font-bold tracking-widest">APR. 11, 2027</p>
+            <p className="text-2xl sm:text-3xl font-bold font-serif">Karl & Louise</p>
+            <p className="font-bold tracking-widest font-sans text-sm">APR. 11, 2027</p>
           </div>
-          <HeartIcon className="w-6 h-6 text-pink-400" />
+          <HeartIcon className="w-5 h-5 text-pink-400" />
         </div>
       </div>
     </div>
